@@ -4,14 +4,14 @@ public class main {
 	  public String Donjon;
 
 	    public static void main(String[] args) {
-	    	
+	    	//test
 	    	//Affiché un messagge pour demander au joueur si il veut jouer
 	    	//Si oui appelé la classe room
 	    	//Si non quitté le programme
 	    	
-	    //creation obt scanner
+	    //creation obt scanner et joueur
 	    	Scanner scan = new Scanner(System.in);
-	    	
+	    	Player player = new Player();
 	    	
 	    // message de bienvenue lugubre
 	    	System.out.println("Veux tu rentrer dans le donjon aventurier ?  (oui/non");

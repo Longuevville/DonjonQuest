@@ -1,42 +1,46 @@
-
+import java.util.Scanner;
 public class main {
 
-	  private String name;
+	  public String Donjon;
 
-	    // Méthode principale (main) pour tester la classe
 	    public static void main(String[] args) {
-	        // Création d'un donjon
-	        Donjon donjon = new Donjon("Donjon ");
-	        // Génération du donjon
-	        donjon.generateDonjon();
-
-	        // Test des getters et setters
-	        System.out.println("Nom du donjon : " + donjon.getName());
-	        donjon.setName("Donjon ...");
-	        System.out.println("Nouveau nom du donjon : " + donjon.getName());
-	    }
-
-	    // Constructeur
-	    public void Donjon(String name) {
-	        this.name = name;
-	    }
-
-	    // Méthode pour générer le donjon
-	    public void generateDonjon() {
-	        // Logique de génération du donjon ici
-	        System.out.println("Génération du donjon '" + name + "'...");
-	        // Exemple de message de sortie
-	        System.out.println("Donjon généré avec succès !");
-	    }
-
-	    // Méthode getter pour récupérer le nom du donjon
-	    public String getName() {
-	        return name;
-	    }
-
-	    // Méthode setter pour définir le nom du donjon
-	    public void setName(String name) {
-	        this.name = name;
+	    	
+	    	//Affiché un messagge pour demander au joueur si il veut jouer
+	    	//Si oui appelé la classe room
+	    	//Si non quitté le programme
+	    	
+	    //creation obt scanner
+	    	Scanner scan = new Scanner(System.in);
+	    	
+	    	
+	    // message de bienvenue lugubre
+	    	System.out.println("Veux tu rentrer dans le donjon aventurier ?  (oui/non");
+	    	
+	    // lire reponse	
+	    	String reponse = scan.next();
+	    	
+	    // si oui appelé classe room
+	    	
+	    	if ( reponse.equalsIgnoreCase("oui")) {
+	   //creation d'une piece
+	    		
+	    		Room room = new Room extends room();
+	    		
+	    		//actions dans la piece
+	    		room.enter();
+	    		room.exit();
+	    		room.search();
+	    		
+	    //si joueur ne vveux pas jouer
+	    	}else if(reponse.equalsIgnoreCase("non")) {
+	    		System.out.println("Vous manquez de courage et repartez");
+	    		
+	    //Fermeture du jeu
+	    		System.exit(0);
+	   //verif 		
+	    		
+	    		
+	    	}
 	    }
 	
 }

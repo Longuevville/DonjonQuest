@@ -4,7 +4,7 @@ public class main {
 	  private String name;
 
 	    // Méthode principale (main) pour tester la classe
-	    public main(String[] args) {
+	    public static void main(String[] args) {
 	        // Création d'un donjon
 	        Donjon donjon = new Donjon("Donjon ");
 	        // Génération du donjon

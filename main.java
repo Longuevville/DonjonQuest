@@ -12,6 +12,7 @@ public class main {
 	    //creation obt scanner et joueur
 	    	Scanner scan = new Scanner(System.in);
 	    	Player player = new Player();
+	    	room room = new room();
 	    	
 	    // message de bienvenue lugubre
 	    	System.out.println("Veux tu rentrer dans le donjon aventurier ?  (oui/non");
@@ -22,14 +23,12 @@ public class main {
 	    // si oui appelé classe room
 	    	
 	    	if ( reponse.equalsIgnoreCase("oui")) {
-	   //creation d'une piece
+	  
 	    		
-	    		Room room = new Room extends room();
+	    //creation d'une instance d'une piece
 	    		
-	    		//actions dans la piece
+	    		
 	    		room.enter();
-	    		room.exit();
-	    		room.search();
 	    		
 	    //si joueur ne vveux pas jouer
 	    	}else if(reponse.equalsIgnoreCase("non")) {
@@ -37,6 +36,7 @@ public class main {
 	    		
 	    //Fermeture du jeu
 	    		System.exit(0);
+	    		scan.close();
 	   //verif 		
 	    		
 	    		

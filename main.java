@@ -25,7 +25,7 @@ public class main {
 	    	if ( reponse.equalsIgnoreCase("oui")) {
 	  
 	    		
-	    //creation d'une instance d'une piece
+	    ////creation d'une instance d'une piece
 	    		
 	    		
 	    		room.enter();

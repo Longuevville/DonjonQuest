@@ -1,53 +1,48 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.util.Random;
 
-
-
-public class room extends main{
-
-	
-	//les objets dans les pieces
-	
-	class Mobilier {
-	    private String nom;
-	    
-	    public Mobilier(String nom) {
-	        this.nom = nom;
-	    }
-	    
-	    public String getNom() {
-	        return nom;
-	    }
-	}
-
-	
-	//tabeau de mobillier
-	
-	int rows = 3; //les lignes
-	int cols = 3; //les colonnes
-	
-	//declaration du tableau de mobilier
-	
-    Mobilier[][] tableauMobilier = generateTableauMobillier(rows, cols);
-
+public class room extends main {
     
-    //afficher le tableau de mobilier
-		
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            Mobilier mobilier = tableauMobilier[i][j];
-            if (mobilier != null) {
-                System.out.print(mobilier.getNom() + "\t"); //c est plus joli
-            } else {
-                System.out.print("Vide\t");
-            }
+    // Les objets dans les pièces
+    static class Mobilier {
+        private String nom;
+        
+        public Mobilier(String nom) {
+            this.nom = nom;
         }
-        System.out.println();
+        
+        public String getNom() {
+            return nom;
+        }
     }
-
     
-    //Methode pour generer un tableau de mobilier
-   public static  Mobilier[][] generateTableauMobillier(int rows, int cols){
+    // Tableau de mobilier
+    static int rows = 3; // les lignes
+    static int cols = 3; // les colonnes
+    
+    public static void main(String[] args) {
+        // Déclaration du tableau de mobilier
+        Mobilier[][] tableauMobilier = generateTableauMobilier(rows, cols);
+        
+        
+        
+        // Afficher le tableau de mobilier
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                Mobilier mobilier = tableauMobilier[i][j];
+                if (mobilier != null) {
+                    System.out.print(mobilier.getNom() + "\t"); // c'est plus joli
+                } else {
+                    System.out.print("Vide\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+    
+    // Méthode pour générer un tableau de mobilier
+    public static Mobilier[][] generateTableauMobilier(int rows, int cols) {
         Random random = new Random();
         Mobilier[][] tableauMobilier = new Mobilier[rows][cols];
         
@@ -66,13 +61,7 @@ public class room extends main{
         return tableauMobilier;
     }
     
-    
-    public static void  enter(){
-			System.out.println("Vous vous retrouvez prisonnier dans une salle sombre");
-			
-		}
-
-	}
+    public static void enter() {
+        System.out.println("Vous vous retrouvez prisonnier dans une salle sombre");
+    }
 }
-
-

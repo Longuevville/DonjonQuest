@@ -50,7 +50,7 @@ public class room extends main {
         
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (random.nextBoolean()) { // Probabilité de 50% d'avoir un mobilier dans une case
+                if (random.nextBoolean()) { // Probabilité de 50% d'avoir un mobilier dans une case du tableau
                     int index = random.nextInt(typesDeMobilier.length);
                     String nomMobilier = typesDeMobilier[index];
                     tableauMobilier[i][j] = new Mobilier(nomMobilier);

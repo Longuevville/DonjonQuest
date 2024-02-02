@@ -34,7 +34,7 @@ public class room extends main {
                 if (mobilier != null) {
                     System.out.print(mobilier.getNom() + "\t"); // c'est plus joli
                 } else {
-                    System.out.print("Vide\t");
+                    System.out.print("C'est vide\t");
                 }
             }
             System.out.println();

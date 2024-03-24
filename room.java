@@ -60,7 +60,6 @@ public class room {
     // Méthode pour fouiller le mobilier
     public static void fouillerMobilier() {
         System.out.println("Vous commencez à fouiller le mobilier...");
-        // Ajoutez ici votre logique pour fouiller le mobilier
-        // Par exemple, vous pouvez parcourir le tableau de mobilier et afficher les détails de chaque objet
+       
     }
 }

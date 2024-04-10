@@ -1,34 +1,18 @@
-import java.util.Random;
-
 public class room {
-    // Les objets dans les pièces
-    static class Mobilier {
-        private String nom;
+    private Donjon.Mobilier[][] mobilier;
 
-        public Mobilier(String nom) {
-            this.nom = nom;
-        }
-
-        public String getNom() {
-            return nom;
-        }
+    public room(Donjon.Mobilier[][] mobilier) {
+        this.mobilier = mobilier;
     }
 
-    // Tableau de mobilier
-    static int rows = 3; // les lignes
-    static int cols = 3; // les colonnes
-
-    public static void enter() {
-        System.out.println("Vous vous retrouvez prisonnier dans une salle sombre");
-        // Déclaration du tableau de mobilier
-        Mobilier[][] tableauMobilier = generateTableauMobilier(rows, cols);
-
-        // Afficher le tableau de mobilier
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                Mobilier mobilier = tableauMobilier[i][j];
-                if (mobilier != null) {
-                    System.out.print(mobilier.getNom() + "\t"); // c'est plus joli
+    // Méthode pour afficher la pièce
+    public void afficherPiece() {
+        System.out.println("Vous regardez autour de vous et vous voyez :");
+        for (int i = 0; i < mobilier.length; i++) {
+            for (int j = 0; j < mobilier[i].length; j++) {
+                Donjon.Mobilier meuble = mobilier[i][j];
+                if (meuble != null) {
+                    System.out.print(meuble.getNom() + "\t");
                 } else {
                     System.out.print("C'est vide\t");
                 }
@@ -37,29 +21,11 @@ public class room {
         }
     }
 
-    // Méthode pour générer un tableau de mobilier
-    public static Mobilier[][] generateTableauMobilier(int rows, int cols) {
-        Random random = new Random();
-        Mobilier[][] tableauMobilier = new Mobilier[rows][cols];
-
-        String[] typesDeMobilier = {"Chaise", "Table", "Lampe", "Armoire", "Bureau"};
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (random.nextBoolean()) { // Probabilité de 50% d'avoir un mobilier dans une case du tableau
-                    int index = random.nextInt(typesDeMobilier.length);
-                    String nomMobilier = typesDeMobilier[index];
-                    tableauMobilier[i][j] = new Mobilier(nomMobilier);
-                }
-            }
-        }
-
-        return tableauMobilier;
-    }
-
-    // Méthode pour fouiller le mobilier
-    public static void fouillerMobilier() {
-        System.out.println("Vous commencez à fouiller le mobilier...");
-       
+    // Méthode pour fouiller la pièce
+    public void fouillerPiece() {
+        System.out.println("Vous commencez à fouiller la pièce...");
+        // Ajout futur de la logique pour fouiller une piece , y penser
+        // afficher détails de chaque objets ou pas ?
+        // monstres ?
     }
 }

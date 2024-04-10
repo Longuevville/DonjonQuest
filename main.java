@@ -4,23 +4,20 @@ public class main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Veux-tu rentrer dans le donjon aventurier ? (oui/non)");
+        System.out.println("Bienvenue dans le donjon aventurier !");
 
-        String reponse = scan.next();
+        // Création du donjon
+        Donjon donjon = new Donjon();
 
-        if (reponse.equalsIgnoreCase("oui")) {
-            room.enter();
-            System.out.println("Voulez-vous fouiller le mobilier ? (oui/non)");
-            String fouillerReponse = scan.next();
-            if (fouillerReponse.equalsIgnoreCase("oui")) {
-                room.fouillerMobilier();
-            } else {
-                System.out.println("Vous décidez de ne pas fouiller le mobilier.");
-            }
-        } else if (reponse.equalsIgnoreCase("non")) {
-            System.out.println("Vous manquez de courage et repartez.");
+        // Proposition au joueur de choisir une pièce
+        System.out.println("Choisissez une pièce où entrer (de 1 à 8) : ");
+        int choix = scan.nextInt();
+
+        // Vérification de la validité du choix du joueur
+        if (choix >= 1 && choix <= 8) {
+            donjon.entrerPiece(choix);
         } else {
-            System.out.println("Réponse invalide. Fin du programme.");
+            System.out.println("Choix invalide. Fin du programme.");
         }
 
         scan.close();

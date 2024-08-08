@@ -1,8 +1,8 @@
-vimport java.util.Random;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Donjon {
-    // Les objets qui se trouvent dans les pièces
+	 // Les objets qui se trouvent dans les pièces
     static class Mobilier {
         private String nom;
 
@@ -27,17 +27,17 @@ public class Donjon {
 
     // Méthode pour entrer dans une pièce
     public void entrerPiece(int numeroPiece) {
-        System.out.println("Vous entrez dans la pièce " + numeroPiece + ".");
+        Printer.printMessage("Vous entrez dans la pièce " + numeroPiece + ".");
         pieces[numeroPiece - 1].afficherPiece();
         
         // Proposer au joueur de fouiller la pièce
-        System.out.println("Voulez-vous fouiller cette pièce ? (oui/non)");
+        Printer.askQuestion("Voulez-vous fouiller cette pièce ? (oui/non)");
         Scanner scan = new Scanner(System.in);
         String reponse = scan.next();
         if (reponse.equalsIgnoreCase("oui")) {
             pieces[numeroPiece - 1].fouillerPiece();
         } else {
-            System.out.println("Vous décidez de ne pas fouiller la pièce.");
+            Printer.printMessage("Vous décidez de ne pas fouiller la pièce.");
         }
         scan.close();
     }
